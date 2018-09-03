@@ -1,0 +1,16 @@
+version: "3"
+services:
+  zenko:
+    image: "scality/s3server"
+    volumes:
+    - ./docker/zenko/config.json:/usr/src/app/config.json
+    ports:
+    - "8000:8000"
+  nginx:
+    build: ./docker/nginx
+    volumes:
+    - ./:/root/aws-sdk-js-trial
+    ports:
+    - "9000:9000"
+    depends_on:
+    - zenko

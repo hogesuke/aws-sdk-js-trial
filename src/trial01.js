@@ -3,7 +3,7 @@ import * as AWS from 'aws-sdk';
 
 const ACCESS_KEY = 'accessKey1';     // zenkoの初期アクセスキー
 const SECRET_KEY = 'verySecreyKey1'; // zenkoの初期シークレットキー
-const ENDPOINT = 'http://127.0.0.1:8000';
+const ENDPOINT = 'http://localhost:9000/s3/';
 const BUCKET = 'hogesuke';
 
 AWS.config.update({
@@ -23,4 +23,3 @@ s3.listBuckets({}, (err, data) => {
     console.log(data);
   }
 });
-
