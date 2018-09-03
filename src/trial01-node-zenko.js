@@ -17,3 +17,11 @@ s3.listBuckets({}, (err, data) => {
     console.log(data);
   }
 });
+
+s3.listObjects({ Bucket: 'hogesuke' }, (err, data) => {
+  if (err) {
+    console.error(err, err.stack);
+  } else {
+    console.log(data);
+  }
+});
